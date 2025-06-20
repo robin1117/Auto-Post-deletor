@@ -54,7 +54,7 @@ setInterval(() => {
   } catch (error) {}
 
   try {
-    document.querySelector("#overflow-menu-button > tp-yt-iron-icon").click(); // Open 3-dot menu
+    document.querySelector("#post-edit > ytcp-post-metadata-editor > div > div.ytPostMetadataEditorZeroZIndex > ytcp-sticky-header > div > div > ytcp-icon-button > tp-yt-iron-icon").click(); // Open 3-dot menu
   } catch (error) {}
 
   try {

@@ -17,7 +17,7 @@ setInterval(() => {
       ?.click(); // find Post
   } catch (error) {}
   try {
-    document.querySelector("#overflow-menu-button > tp-yt-iron-icon").click(); //3dots
+    document.querySelector("#post-edit > ytcp-post-metadata-editor > div > div.ytPostMetadataEditorZeroZIndex > ytcp-sticky-header > div > div > ytcp-icon-button > tp-yt-iron-icon").click(); //3dots
   } catch (error) {}
   try {
     document.querySelector("#text-item-0")?.click(); //click DeleteForever after clicking 3 dots
