@@ -1,36 +1,31 @@
 // ────────────────────────────────────────────────────────────────
-// Script Name   : YouTube Post Auto Deleter
+// Script Name   : YouTube Post Auto Deleter 
 // Author        : Robin Singh
-// Version       : v1.0.0
+// Version       : v1.0.2
 // Description   : Automatically and recursively deletes all YouTube posts
 //                 from the YouTube Studio post manager, one by one.
 // Note          : Use at your own risk. This script simulates UI clicks.
 //                 Ensure you're on the YouTube Studio "Posts" page.
-// Last Updated  : 2025-06-12
+// Last Updated  : 2026-01-31
 // ────────────────────────────────────────────────────────────────
 setInterval(() => {
   try {
-    document
-      .querySelector(
-        "#row-container > div.tablecell-post.floating-column.last-floating-column.cell-body.style-scope.ytcp-post-row.style-scope.ytcp-post-row > div.post-thumbnail.style-scope.ytcp-post-row > a > ytcp-post-thumbnail"
-      )
-      ?.click(); // find Post
-  } catch (error) {}
+    document.querySelector("#video-list > ytcp-post-section > ytcp-post-section-content > ytcp-post-row:nth-child(2) > div > div.cell-body.tablecell-post.floating-column.last-floating-column > div.ytcpPostRowPostThumbnail > a > ytcp-post-thumbnail")?.click(); // Select post
+  } catch (error) { }
+
   try {
-    document.querySelector("#post-edit > ytcp-post-metadata-editor > div > div.ytPostMetadataEditorZeroZIndex > ytcp-sticky-header > div > div > ytcp-icon-button > tp-yt-iron-icon").click(); //3dots
-  } catch (error) {}
+    document.querySelector("#main > div > ytcp-animatable.page.selected.style-scope.ytcp-app.style-scope.ytcp-app > ytcp-post-metadata-editor-section > ytcp-post-metadata-editor > div > div.ytPostMetadataEditorZeroZIndex > ytcp-sticky-header > div > div > ytcp-icon-button").click(); // Open 3-dot menu
+  } catch (error) { }
+
   try {
-    document.querySelector("#text-item-0")?.click(); //click DeleteForever after clicking 3 dots
-  } catch (error) {}
+    document.querySelector("#text-item-0")?.click(); // Click Delete
+  } catch (error) { }
+
   try {
-    document.querySelector("#checkbox-line-height-aligner-container")?.click(); //confirmation button
-  } catch (error) {}
-  //-------------------------------------DELETING-FOREVER------------------------------------------
+    document.querySelector("#checkbox-container")?.click(); // Confirm checkbox
+  } catch (error) { }
+
   try {
-    document
-      .querySelector(
-        "#delete-confirm-button > ytcp-button-shape > button > yt-touch-feedback-shape > div"
-      )
-      ?.click();
-  } catch (error) {}
+    document.querySelector("#dialog > div.footer.style-scope.ytcp-dialog > div > div > div > ytcp-button.ytcpPostDeleteDialogDeleteButton > ytcp-button-shape > button > yt-touch-feedback-shape > div.yt-spec-touch-feedback-shape__fill")?.click(); // Final confirm
+  } catch (error) { }
 }, 1000);
